@@ -20,8 +20,11 @@ object Dataset {
       * @return the average amount of additions in the commits that have stats data.
       */
     def avgAdditions(input: List[Commit]): Int = {
-        input.foreach(commit => println(commit.sha))
-        3137
+        var res = 0
+        input.foreach(commit => commit.stats match {
+            case Some(x) => res += x.additions
+        })
+        res
     }
 
 

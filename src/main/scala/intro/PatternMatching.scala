@@ -73,11 +73,13 @@ object PatternMatching {
       * Hint: you can use if statements in pattern matching.
       */
     def firstDivByX(xs: List[Int], n: Int): OptionalNum = xs match {
+        // base case
+        case Nil => Nothing()
+
         case x if x.head % n == 0 =>  Num(x.head)
         case a => firstDivByX(a.tail, n)
 
-        // base case
-        case Nil => Nothing()
+
     }
 
 
