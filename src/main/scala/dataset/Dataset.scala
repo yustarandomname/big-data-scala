@@ -24,7 +24,8 @@ object Dataset {
         input.foreach(commit => commit.stats match {
             case Some(x) => res += x.additions
         })
-        res
+
+        res / input.length
     }
 
 
